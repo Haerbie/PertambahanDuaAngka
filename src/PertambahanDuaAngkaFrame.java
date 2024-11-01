@@ -61,6 +61,12 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(jLabel4, gridBagConstraints);
+
+        textField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField1KeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -68,6 +74,12 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(textField1, gridBagConstraints);
+
+        textField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField2KeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -150,6 +162,20 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
     private void buttonKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKeluarActionPerformed
         System.exit(0);
     }//GEN-LAST:event_buttonKeluarActionPerformed
+
+    private void textField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyTyped
+        char karakter = evt.getKeyChar();
+        if (!Character.isDigit(karakter)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField1KeyTyped
+
+    private void textField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField2KeyTyped
+        char karakter = evt.getKeyChar();
+        if (!Character.isDigit(karakter)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField2KeyTyped
 
     /**
      * @param args the command line arguments
