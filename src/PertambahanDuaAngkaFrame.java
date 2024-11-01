@@ -66,6 +66,11 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(jLabel4, gridBagConstraints);
 
+        textField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textField1FocusGained(evt);
+            }
+        });
         textField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textField1KeyTyped(evt);
@@ -79,6 +84,11 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(textField1, gridBagConstraints);
 
+        textField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textField2FocusGained(evt);
+            }
+        });
         textField2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textField2KeyTyped(evt);
@@ -93,6 +103,11 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         jPanel2.add(textField2, gridBagConstraints);
 
         textFieldHasil.setEditable(false);
+        textFieldHasil.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldHasilFocusGained(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -183,6 +198,18 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_textField2KeyTyped
+
+    private void textField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textField1FocusGained
+        textField1.setText("");
+    }//GEN-LAST:event_textField1FocusGained
+
+    private void textField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textField2FocusGained
+        textField2.setText("");
+    }//GEN-LAST:event_textField2FocusGained
+
+    private void textFieldHasilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldHasilFocusGained
+        textFieldHasil.setText("");
+    }//GEN-LAST:event_textFieldHasilFocusGained
 
     /**
      * @param args the command line arguments
