@@ -33,12 +33,17 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Aplikasi Pertambahan Dua Angka");
         jPanel1.add(jLabel1);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
+        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -116,6 +121,7 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(textFieldHasil, gridBagConstraints);
 
+        buttonTambah.setBackground(new java.awt.Color(0, 255, 0));
         buttonTambah.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         buttonTambah.setText("Tambah");
         buttonTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +136,7 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(buttonTambah, gridBagConstraints);
 
+        buttonHapus.setBackground(new java.awt.Color(255, 0, 0));
         buttonHapus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         buttonHapus.setText("Hapus");
         buttonHapus.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +151,9 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 15, 15, 15);
         jPanel2.add(buttonHapus, gridBagConstraints);
 
+        buttonKeluar.setBackground(new java.awt.Color(0, 0, 0));
         buttonKeluar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonKeluar.setForeground(new java.awt.Color(255, 255, 255));
         buttonKeluar.setText("Keluar");
         buttonKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
