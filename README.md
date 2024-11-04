@@ -93,7 +93,7 @@ private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {
 | :-: | --------------   |   :-----:    |
 |  1  | Komponen GUI     |    20    |
 |  2  | Logika Program   |    20    |
-|  3  | Kesesuaian UI    |    15    |
-|  4  | Constructor      |    15    |
+|  3  | Events           |    15    |
+|  4  | Kesesuaian UI    |    15    |
 |  5  | Memenuhi Variasi |    30    |
 |     | TOTAL        | 100 |
