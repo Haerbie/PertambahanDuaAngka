@@ -1,41 +1,34 @@
+# Latihan 1: Aplikasi Pertambahan Dua Angka
 
-# Aplikasi Pertambahan Dua Angka
+### Pembuat
+- **Nama**: Muhammad Irwan Habibie
+- **NPM**: 2210010461
+- **Latihan 1**
 
-**Pembuat**: Muhammad Irwan Habibie  
-**NPM**: 2210010461  
-**Latihan 1**
+---
 
-## Deskripsi
-Aplikasi ini adalah program GUI sederhana yang dibuat dengan Java Swing untuk melakukan operasi penjumlahan pada dua angka yang dimasukkan pengguna. Aplikasi ini memungkinkan pengguna memasukkan dua angka, menampilkan hasil penjumlahan, serta menghapus input atau keluar dari aplikasi.
+## 1. Deskripsi Program
+Aplikasi ini merupakan kalkulator sederhana yang memungkinkan pengguna untuk:
+- Memasukkan dua angka pada dua TextField.
+- Menampilkan hasil penambahan saat tombol **Tambah** diklik.
+- Menghapus input di kedua TextField dan mengarahkan fokus ke TextField pertama saat tombol **Hapus** diklik.
 
-## Fitur
-- **Penjumlahan Angka**: Menambahkan dua angka yang dimasukkan oleh pengguna dan menampilkan hasilnya.
-- **Penghapusan Input**: Menghapus nilai dari input dan hasil.
-- **Keluar Aplikasi**: Menutup aplikasi dengan aman.
-- **Validasi Input**: Memastikan bahwa input yang dimasukkan adalah angka, dengan menampilkan pesan kesalahan jika tidak valid.
+## 2. Komponen GUI
+- **JFrame**: Window utama aplikasi.
+- **JPanel**: Panel untuk menampung komponen.
+- **JLabel**: Label deskripsi input dan hasil.
+- **JTextField**: Input angka pertama, angka kedua, dan hasil.
+- **JButton**: Tombol untuk melakukan operasi **Tambah**, **Hapus**, dan **Keluar**.
 
-## Struktur Tampilan GUI
-1. **Label Utama**: Menampilkan judul "Aplikasi Pertambahan Dua Angka".
-2. **Input Field**: Text field untuk memasukkan angka pertama dan kedua.
-3. **Tombol Tambah**: Tombol untuk melakukan penjumlahan.
-4. **Tombol Hapus**: Tombol untuk menghapus input dan hasil.
-5. **Tombol Keluar**: Tombol untuk keluar dari aplikasi.
-6. **Field Hasil**: Menampilkan hasil dari penjumlahan.
+## 3. Logika Program
+- Operasi penambahan dua angka.
+- Validasi input untuk memastikan pengguna memasukkan angka.
 
-## Cara Penggunaan
-1. Jalankan aplikasi.
-2. Masukkan angka ke dalam kolom input untuk Angka 1 dan Angka 2.
-3. Klik tombol **Tambah** untuk melihat hasil penjumlahan.
-4. Hasil akan ditampilkan di field hasil.
-5. Klik tombol **Hapus** untuk menghapus input dan hasil.
-6. Klik tombol **Keluar** untuk menutup aplikasi.
+## 4. Events
+Menggunakan **ActionListener** untuk menangani event dari tombol **Tambah**, **Hapus**, dan **Keluar**:
 
-## Logika Utama
-- **Penjumlahan**: Program mengambil input dari dua text field, mengonversinya menjadi integer, dan menjumlahkannya. Hasil kemudian ditampilkan di field hasil.
-- **Validasi Input**: Program menggunakan `try-catch` untuk menangkap kesalahan saat mengonversi input menjadi angka, menampilkan pesan kesalahan jika input tidak valid.
-
-## Kode Utama
-### Fungsi Penjumlahan dan Tampilkan Hasil
+### A. Tombol Tambah
+Menampilkan hasil penambahan setelah memvalidasi input.
 ```java
 private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {                                             
     try {
@@ -46,20 +39,62 @@ private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {
     } catch (NumberFormatException ex) {
         JOptionPane.showMessageDialog(this, "Input harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
     }
-}                                            
+}  
 ```
 
+### B. Tombol Hapus
 ```java
-private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {                                            
-    textField1.setText("");
-    textField2.setText("");
-    textFieldHasil.setText("");
-    textField1.requestFocus();
-}                                           
+    private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        textField1.setText("");
+        textField2.setText("");
+        textFieldHasil.setText("");
+        textField1.requestFocus();
+    }  
 ```
+### C. Tombol Hapus
+```java
+    private void buttonKeluarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        System.exit(0);
+    }                                           
+```     
+## 5. Variasi:
+### A. KeyAdapter pada JTextField untuk membatasi input hanya angka
+```java
+        char karakter = evt.getKeyChar();
+        if (!Character.isDigit(karakter)) {
+            evt.consume();
+        }
+    } 
+```
+### B. Gunakan JOptionPane untuk menampilkan error input
+```java
+    catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Input harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+```
+### C. Implementasikan FocusListener untuk membersihkan JTextField saat mendapatkan fokus.
+```java
+    private void textField1FocusGained(java.awt.event.FocusEvent evt) {                                       
+        textField1.setText("");
+    }                                      
+    private void textField2FocusGained(java.awt.event.FocusEvent evt) {                                       
+        textField2.setText("");
+    }                                      
+    private void textFieldHasilFocusGained(java.awt.event.FocusEvent evt) {                                           
+        textFieldHasil.setText("");
+    }                                          
+```
+## 6. Tampilan Saat di Run :
+   
+   ![TampilanPertambahanDuaAngka](https://github.com/user-attachments/assets/5afcf256-29df-4259-a5f4-361f582c9b65)
 
-```java
-private void buttonKeluarActionPerformed(java.awt.event.ActionEvent evt) {                                             
-    System.exit(0);
-}                                            
-```
+## Indikator Penilaian:
+
+| No  | Komponen         |  Persentase  |
+| :-: | --------------   |   :-----:    |
+|  1  | Komponen GUI     |    20    |
+|  2  | Logika Program   |    20    |
+|  3  | Kesesuaian UI    |    15    |
+|  4  | Constructor      |    15    |
+|  5  | Memenuhi Variasi |    30    |
+|     | TOTAL        | 100 |
