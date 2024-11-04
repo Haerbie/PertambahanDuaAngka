@@ -3,7 +3,6 @@
 ### Pembuat
 - **Nama**: Muhammad Irwan Habibie
 - **NPM**: 2210010461
-- **Latihan 1**
 
 ---
 
